@@ -1,0 +1,95 @@
+body.NeuTool .Grad-panel,body.NeuTool .Blob-panel,body.NeuTool .Blob-element{display: none;}
+.panel_container{
+   grid-area: panel;
+}
+.control-panel{
+   padding: 2rem 1rem;
+   border-radius: 20px 0 0 0;
+   background: var(--main-bg);
+   box-shadow: inset 5px 5px 10px var(--shadows),
+               inset -5px -5px 10px var(--highlights);
+   border: 2px solid var(--sec-bg);
+   width: max-content;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   grid-area: control;
+}
+.control-container{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   width: fit-content;
+}
+input[type="color"]{
+   border: 1px solid var(--text-color);
+   border-radius: 10px 0;
+   margin-left: 40px;
+}
+.last-control{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.5rem;
+   margin-top: 20px;
+}
+.controls{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 10px;
+   width: 4.5em;
+   aspect-ratio: 1/1;
+}
+.control-container label,.controls label{color: var(--text-color);}
+.knob{
+   position: relative;
+   margin-top: 8%;
+   background: radial-gradient(var(--main-bg),var(--sec-bg));
+   aspect-ratio: 1/1;
+   height: 3em;
+   border-radius: 50%;
+   box-shadow:  3px 3px 6px var(--shadows),
+             -3px -3px 6px var(--highlights);
+   transition: 0;
+   touch-action: none;
+}
+.knob::before,.knob::after{
+   content: "";
+   position: absolute;
+   border-radius: 50%;
+}
+.knob::after{
+   top: 10px;
+   left: 50%;
+   transform: translate(-50%);
+   height: 10px;
+   width: 10px;
+   background: var(--text-color);
+   box-shadow: 1px 1px 3px var(--text-color);
+}
+.knob::before{
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   width: 110%;
+   height: 110%;
+   border: 3px solid var(--main-bg);
+   box-shadow:  6px 6px 12px var(--shadows),
+             -6px -6px 12px var(--highlights);
+}
+.control-buttons{
+   padding: 5px;
+   margin: 2px;
+   border-radius: 10px;
+   background: var(--main-bg);
+   border: 2px solid var(--sec-bg);
+   box-shadow:  6px 6px 12px var(--shadows),
+             -6px -6px 12px var(--highlights);
+}
+.control-buttons:active{
+   box-shadow: inset 6px 6px 12px var(--shadows),
+                inset -6px -6px 12px var(--highlights);
+}
